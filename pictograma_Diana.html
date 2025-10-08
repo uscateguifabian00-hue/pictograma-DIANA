@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Explora los pictogramas del SGA</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .pictograma {
+      width: 150px;
+      height: 150px;
+      border: 2px solid #2c3e50;
+      border-radius: 10px;
+      background-color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      transition: transform 0.2s;
+    }
+    .pictograma:hover {
+      transform: scale(1.1);
+    }
+    .info {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #34495e;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #ecf0f1;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #7f8c8d;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 Explora los pictogramas del SGA</h1>
+  <p>Haz clic en cada símbolo para conocer su significado y cómo protegerte.</p>
+
+  <div class="grid">
+    <div class="pictograma" onclick="mostrarInfo('corrosivo')">☠️</div>
+    <div class="pictograma" onclick="mostrarInfo('inflamable')">🔥</div>
+    <div class="pictograma" onclick="mostrarInfo('explosivo')">💥</div>
+    <div class="pictograma" onclick="mostrarInfo('irritante')">⚠️</div>
+    <div class="pictograma" onclick="mostrarInfo('ambiental')">🌿</div>
+  </div>
+
+  <div class="info" id="infoBox">Haz clic en un pictograma para ver la información.</div>
+
+  <footer>
+    Autor de la campaña: <strong>Diana Katherine Gómez Durán</strong><br>
+    Comprometida con la educación preventiva y la seguridad química.
+  </footer>
+
+  <script>
+    function mostrarInfo(tipo) {
+      const info = {
+        corrosivo: "☠️ Corrosivo: Puede causar quemaduras graves en la piel y daños en los ojos. Usa guantes, gafas de seguridad y maneja con precaución.",
+        inflamable: "🔥 Inflamable: Puede encenderse fácilmente. Mantén lejos de fuentes de calor y llama abierta. Almacena en lugares ventilados.",
+        explosivo: "💥 Explosivo: Riesgo de explosión por choque, fricción o calor. Maneja solo con entrenamiento especializado.",
+        irritante: "⚠️ Irritante: Puede causar irritación en piel, ojos o vías respiratorias. Usa protección personal y evita el contacto directo.",
+        ambiental: "🌿 Peligro ambiental: Tóxico para organismos acuáticos. Evita derrames y sigue protocolos de eliminación segura."
+      };
+      document.getElementById("infoBox").textContent = info[tipo];
+    }
+  </script>
+</body>
+</html>
